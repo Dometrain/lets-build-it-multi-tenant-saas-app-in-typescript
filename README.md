@@ -14,13 +14,13 @@ On the course you will build a full stack SaaS application in TypeScript.  The c
 
 The `main` branch contains the final working version of the project.  There are also branches you can check out as starting points for each section:
 
-1. [Starting point for Front End (branch 01)](/tree/section/01) - A new Vite application with most of the demo code removed
-2. [Mocked Front End, No Auth (branch 02)](/tree/section/02) - A working front end using mocked API responses
-3. [Starting Point for Back End (branch 03)](/tree/section/03) - A new AWS CDK application with some helper Constructs 
-4. [Backend services created (branch 04)](/tree/secetion/04) - Backend services created (except API)
-5. [Hosted UI For Authentication (branch 05)](/tree/section/05) - Hosted UI Configured and Integrated with FrontEnd
-6. [API Created (branch 06)](/tree/section/06) - Back end API endpoints created, FrontEnd now works with no mocks
-7. [Stripe Integration Added (branch 07)](/tree/section/07) - Stripe added to both front end and back end to process 
+1. [Starting point for Front End (branch 01)](https://github.com/Dometrain/lets-build-it-multi-tenant-saas-app-in-typescript/tree/section/01) - A new Vite application with most of the demo code removed
+2. [Mocked Front End, No Auth (branch 02)](https://github.com/Dometrain/lets-build-it-multi-tenant-saas-app-in-typescript/tree/section/02) - A working front end using mocked API responses
+3. [Starting Point for Back End (branch 03)](https://github.com/Dometrain/lets-build-it-multi-tenant-saas-app-in-typescript/tree/section/03) - A new AWS CDK application with some helper Constructs 
+4. [Backend services created (branch 04)](https://github.com/Dometrain/lets-build-it-multi-tenant-saas-app-in-typescript/tree/secetion/04) - Backend services created (except API)
+5. [Hosted UI For Authentication (branch 05)](https://github.com/Dometrain/lets-build-it-multi-tenant-saas-app-in-typescript/tree/section/05) - Hosted UI Configured and Integrated with FrontEnd
+6. [API Created (branch 06)](https://github.com/Dometrain/lets-build-it-multi-tenant-saas-app-in-typescript/tree/section/06) - Back end API endpoints created, FrontEnd now works with no mocks
+7. [Stripe Integration Added (branch 07)](https://github.com/Dometrain/lets-build-it-multi-tenant-saas-app-in-typescript/tree/section/07) - Stripe added to both front end and back end to process 
 
 To use a branch, clone this repository and switch to the required section:
 
