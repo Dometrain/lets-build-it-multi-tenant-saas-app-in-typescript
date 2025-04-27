@@ -59,51 +59,76 @@ export class BackEndStack extends cdk.Stack {
       userPoolClients: [cognito.webClient],
     });
 
-    // serverlessApi.addLambdaRoute('NotesEndpoint', {
-    //   functionName: 'notes',
-    //   routes: [{
-    //     methods: [HttpMethod.GET],
-    //     path: '/notes'
-    //   },
-    //   {
-    //     methods: [HttpMethod.PUT],
-    //     path: '/notes/{id}'
-    //   }]
-    // });
+    serverlessApi.addLambdaRoute('NotesEndpoint', {
+      functionName: 'notes',
+      routes: [{
+        // makes this lambda equivalent to a Controller in MVC, you could split out GET
+        // There are no rules in software engineering, except for all the rules.
+        methods: [HttpMethod.GET],
+        path: '/notes'
+      },
+      {
+        methods: [HttpMethod.PUT],
+        path: '/notes/{id}'
+      }]
+    });
 
-    // serverlessApi.addLambdaRoute('ReportsEndpoint', {
-    //   functionName: 'reports',
-    //   routes: [{
-    //     methods: [HttpMethod.GET],
-    //     path: '/reports'
-    //   }]
-    // });
+    serverlessApi.addLambdaRoute('ReportsEndpoint', {
+      functionName: 'reports',
+      routes: [{
+        methods: [HttpMethod.GET],
+        path: '/reports'
+      }]
+    });
 
-    // serverlessApi.addLambdaRoute('UsersEndpoint', {
-    //   functionName: 'users',
-    //   routes: [{
-    //     methods: [HttpMethod.GET, HttpMethod.POST],
-    //     path: '/users'
-    //   }],
-    //   overrides: {
-    //     environment: {
-    //       COGNITO_USER_POOL_ID: cognito.userPool.userPoolId
-    //     }
-    //   }
-    // });
+    serverlessApi.addLambdaRoute('UsersEndpoint', {
+      functionName: 'users',
+      routes: [{
+        methods: [HttpMethod.GET, HttpMethod.POST],
+        path: '/users'
+      }],
+      overrides: {
+        environment: {
+          COGNITO_USER_POOL_ID: cognito.userPool.userPoolId
+        }
+      }
+    });
+
+    serverlessApi.addLambdaRoute('StripeEndpoint', {
+      functionName: 'stripe',
+      routes: [{
+        methods: [HttpMethod.POST],
+        path: '/stripe',
+        isAnonymous: true
+      },
+      {
+        methods: [HttpMethod.GET],
+        path: '/checkout-session'
+      }],
+      nodeModulesToInclude: ['stripe'],
+      overrides: {
+        environment: {
+          STRIPE_PUBLIC_KEY: props.localEnv.STRIPE_PUBLIC_KEY,
+          STRIPE_PRIVATE_KEY: props.localEnv.STRIPE_PRIVATE_KEY,
+          STRIPE_WEBHOOK_SECRET: props.localEnv.STRIPE_WEBHOOK_SECRET,
+          COGNITO_USER_POOL_ID: cognito.userPool.userPoolId,
+          STRIPE_PRICE_ID: props.localEnv.STRIPE_PRICE_ID
+        }
+      }
+    });
 
 
     const adminFunctions = new AdminFunctions(this, 'AdminFns', { userPool: cognito.userPool });
     adminFunctions.node.addDependency(cognito);
-    // adminFunctions.addAdminLambda('CreateTenant', {
-    //   functionName: 'create-tenant',
-    //   nodeModulesToInclude: ['nanoid'],
-    //   overrides: {
-    //     environment: {
-    //       COGNITO_USER_POOL_ID: this.userPool.userPoolId,
-    //     },
-    //   }
-    // });
+    adminFunctions.addAdminLambda('CreateTenant', {
+      functionName: 'create-tenant',
+      nodeModulesToInclude: ['nanoid'],
+      overrides: {
+        environment: {
+          COGNITO_USER_POOL_ID: this.userPool.userPoolId,
+        },
+      }
+    });
 
     new CloudWatchDashboard(this, 'CloudWatchDashboard', {
       httpApi: serverlessApi.api,
