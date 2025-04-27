@@ -1,0 +1,28 @@
+.form {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+
+.form input,
+.form button {
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+
+.inputGroup {
+
+}
+
+.submitButton {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: 1px solid var(--text-color);
+    border-radius: 0.2rem;
+}
+
+.submitButton:hover {
+    background-color: var(--primary-color-light);
+}

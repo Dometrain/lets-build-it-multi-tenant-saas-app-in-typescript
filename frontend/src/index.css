@@ -1,0 +1,47 @@
+:root {
+  --background-color: #FAFAFA;
+  --background-color-inset: #FFF;
+
+  --primary-color: #B5D9EB;
+  --primary-color-light: #cddee7;
+
+  --text-color: #333;
+  --font-family-body: Arial, sans-serif;
+
+  --shadow-1: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+
+html {
+  font-size: 16px;
+}
+
+
+html,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-colour);
+  font-family: var(--font-family-body);
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: var(--font-family-title);
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}

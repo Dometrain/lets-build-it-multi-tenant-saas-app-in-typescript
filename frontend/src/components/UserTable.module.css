@@ -1,0 +1,12 @@
+.table {
+    width: 100%;
+}
+
+.table th {
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 1rem 0;
+}
