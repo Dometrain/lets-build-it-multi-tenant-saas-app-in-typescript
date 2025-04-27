@@ -19,7 +19,7 @@ The `main` branch contains the final working version of the project.  There are 
 3. [Starting Point for Back End (branch 03)](/tree/section/03) - A new AWS CDK application with some helper Constructs 
 4. [Backend services created (branch 04)](/tree/secetion/04) - Backend services created (except API)
 5. [Hosted UI For Authentication (branch 05)](/tree/section/05) - Hosted UI Configured and Integrated with FrontEnd
-6. [API Created (branch 06)](/tree/section/06) - Back end created with authentication and API logic, FrontEnd now works with no mocks
+6. [API Created (branch 06)](/tree/section/06) - Back end API endpoints created, FrontEnd now works with no mocks
 7. [Stripe Integration Added (branch 07)](/tree/section/07) - Stripe added to both front end and back end to process 
 
 To use a branch, clone this repository and switch to the required section:
@@ -30,7 +30,7 @@ git clone https://github.com/Dometrain/lets-build-it-multi-tenant-saas-app-in-ty
 cd lets-build-it-multi-tenant-saas-app-in-typescript
 
 # Check out the branch for the starting point of required section...
-git checkout section/00
+git checkout section/01
 ```
 
 ## Prerequisites
