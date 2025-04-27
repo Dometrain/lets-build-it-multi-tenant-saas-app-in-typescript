@@ -1,7 +1,7 @@
 # Let's Build It: Multi Tenanted SaaS App in TypeScript
 ## Front End
 
-The starting point for the front end is a new [Vite](https://vite.dev/) application with most of the example code removed.  Start by cloning [section 1](/tree/section/01)
+The starting point for the front end is a new [Vite](https://vite.dev/) application with most of the example code removed.  Start by cloning [section 1](https://github.com/Dometrain/lets-build-it-multi-tenant-saas-app-in-typescript/tree/section/01)
 
 ## Installation
 

@@ -1,7 +1,7 @@
 # Let's Build It: Multi Tenanted SaaS App in TypeScript
 ## Back End
 
-The starting point for the front end is a new [AWS CDK](https://aws.amazon.com/cdk/) application with most of the example code removed.  Start by cloning [section 3](/tree/section/03).
+The starting point for the front end is a new [AWS CDK](https://aws.amazon.com/cdk/) application with most of the example code removed.  Start by cloning [section 3](https://github.com/Dometrain/lets-build-it-multi-tenant-saas-app-in-typescript/tree/section/03).
 
 ## Useful commands
 
