@@ -92,6 +92,7 @@ export class BackEndStack extends cdk.Stack {
     //   }
     // });
 
+
     const adminFunctions = new AdminFunctions(this, 'AdminFns', { userPool: cognito.userPool });
     adminFunctions.node.addDependency(cognito);
     // adminFunctions.addAdminLambda('CreateTenant', {

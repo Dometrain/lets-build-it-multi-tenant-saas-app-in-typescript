@@ -1,7 +1,6 @@
 import React, {  } from 'react';
 import styles from './Reports.module.css';
 import { ReportData } from '@common/types/ReportData';
-
 type Props = {
     reports: ReportData
 }

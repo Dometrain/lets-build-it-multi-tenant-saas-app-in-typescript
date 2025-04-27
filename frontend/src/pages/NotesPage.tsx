@@ -4,15 +4,15 @@ import { fetchAllNotes } from '../api';
 import NotesList from '../components/NotesList';
 
 const NotesPage: React.FC = () => {
-  const { data: notes } = useQuery({
-    queryKey: ["notes"],
-    queryFn: fetchAllNotes,
-  });
+    const { data: notes } = useQuery({
+        queryKey: ["notes"],
+        queryFn: fetchAllNotes,
+    });
 
-  return <div className={styles.page}>
-    <h1>Notes</h1>
+    return <div className={styles.page}>
+        <h1>Notes</h1>
     { notes ? <NotesList notes={notes} /> : 'Loading...' }
-  </div>
+    </div>
 };
 
 export default NotesPage;
