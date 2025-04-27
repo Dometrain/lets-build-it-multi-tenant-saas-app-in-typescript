@@ -4,8 +4,8 @@ import { Note } from '@common/types/Note';
 import { CircleUser, SendHorizontal } from 'lucide-react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { upsertNote } from '../api';
-import { AuthContext } from '../contexts/AuthContext';
 import { nanoid } from 'nanoid'
+
 
 type Props = {
     notes: Note[]
@@ -14,7 +14,7 @@ type Props = {
 const NotesList: React.FC<Props> = props => {
     const [newNoteValue, setNewNoteValue] = useState('');
     const queryClient = useQueryClient();
-    const { currentUser } = useContext(AuthContext);
+
     const addNoteMutation = useMutation({
         mutationFn: upsertNote,
         onMutate: async (newNote: Note) => {
@@ -28,10 +28,10 @@ const NotesList: React.FC<Props> = props => {
 
     const onClickCreate = () => {
         if (newNoteValue.trim().length === 0) return;
-        if (!currentUser) return;
+
         addNoteMutation.mutate({ 
             content: newNoteValue, 
-            author: currentUser.name, 
+            author: 'Bob', 
             id: nanoid() 
         });
         setNewNoteValue('');
@@ -58,6 +58,6 @@ const NotesList: React.FC<Props> = props => {
     </ul>
 
 
-}
+        }
 
 export default NotesList;

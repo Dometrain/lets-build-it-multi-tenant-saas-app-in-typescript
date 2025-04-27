@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchUsersInTenant } from "../api";
-import UserTable from "../components/UserTable";
 import styles from './page.module.css';
+import UserTable from "../components/UserTable";
 import NewUserForm from "../components/NewUserForm";
 
 const UsersPage: React.FC = () => {

@@ -1,11 +1,8 @@
 import { Link, Outlet } from "@tanstack/react-router";
 import styles from './AppLayout.module.css';
 import { Notebook, Activity, Users } from 'lucide-react';
-import { AuthContext } from "../contexts/AuthContext";
-import { useContext } from "react";
 
 const AppLayout: React.FC = () => {
-  const { currentUser, logout } = useContext(AuthContext);
 
   return <div className={styles.layout}>
     <nav className={styles.menu}>
@@ -24,7 +21,7 @@ const AppLayout: React.FC = () => {
     </nav>
     <main>
       <header className={styles.header}>
-        <Link to="/" onClick={logout}>{currentUser?.email}</Link>
+        <Link to="/" >me@example.com</Link>
       </header>
       <Outlet />
     </main>
